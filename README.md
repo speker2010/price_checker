@@ -1,3 +1,29 @@
+## run
+```bash
+docker-compose up -d
+```
+1. Wait while creating autoload.php in ```vendor``` dir.
+1. Go to localhost:8000 or DOCKER_MACHINE_IP:8000
+
+Where DOCKER_MACHINE_IP from results for:
+```
+docker-machine ip
+```
+
+## Add dependencies
+```
+$ docker container run --interactive --tty --volume $PWD:/app composer require PACKAGE_NAME
+```
+
+## Call yii console app
+```
+$ docker exec CONTAINER_ID php yii
+```
+CONTAINER_ID you can find for container with php-fpm:
+```
+docker container ls
+```
+
 Yii 2 Basic Project Template
 ============================
 

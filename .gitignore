@@ -30,3 +30,6 @@ tests/_output/*
 tests/_support/_generated
 config/db.php
 config/console.php
+
+docker/db/mysql
+docker/nginx/log
