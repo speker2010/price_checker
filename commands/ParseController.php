@@ -210,7 +210,6 @@ class ParseController extends Controller
                 var_dump($items->store->name . ' ' . $items->product_uri);
             }
         }
-
     }
 
     public function actionParse()

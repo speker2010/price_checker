@@ -1,3 +1,9 @@
+# Price checker
+It's application for parsing prices from sites. You can add product, stores and add url product in store.
+Product is simple. Product name and active it or not.
+Store contain name, cookies, url, host and css selectors for price, old price, sale and city.
+
+
 ## run
 ```bash
 docker-compose up
