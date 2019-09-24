@@ -26,6 +26,12 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <ul>
+        <li><?= \yii\helpers\Html::a('products', ['products/index']) ?></li>
+        <li><?= \yii\helpers\Html::a('prices', ['prices/index']) ?></li>
+        <li><?= \yii\helpers\Html::a('stores', ['stores/index']) ?></li>
+        <li><?= \yii\helpers\Html::a('product store', ['product-store/index']) ?></li>
+    </ul>
     <?php
     NavBar::begin([
         'brandLabel' => 'My Company',
@@ -37,9 +43,10 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Products', 'url' => ['/products/index']],
+            ['label' => 'Prices', 'url' => ['/prices/index']],
+            ['label' => 'Stores', 'url' => ['/stores/index']],
+            ['label' => 'Product store', 'url' => ['/product-store/index']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
