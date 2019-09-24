@@ -26,12 +26,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <ul>
-        <li><?= \yii\helpers\Html::a('products', ['products/index']) ?></li>
-        <li><?= \yii\helpers\Html::a('prices', ['prices/index']) ?></li>
-        <li><?= \yii\helpers\Html::a('stores', ['stores/index']) ?></li>
-        <li><?= \yii\helpers\Html::a('product store', ['product-store/index']) ?></li>
-    </ul>
     <?php
     NavBar::begin([
         'brandLabel' => 'My Company',

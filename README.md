@@ -1,8 +1,9 @@
 ## run
 ```bash
-docker-compose up -d
+docker-compose up
 ```
-1. Wait while creating autoload.php in ```vendor``` dir.
+1. Wait while creating autoload.php in ```vendor``` dir in composer container.
+1. Migrate up `docker exec -it CONTAINER_ID bash`, then `./yii migrate`. Type `yes`
 1. Go to localhost:8000 or DOCKER_MACHINE_IP:8000
 
 Where DOCKER_MACHINE_IP from results for:
@@ -12,7 +13,11 @@ docker-machine ip
 
 ## Add dependencies
 ```
-$ docker container run --interactive --tty --volume $PWD:/app composer require PACKAGE_NAME
+$ docker container run -it --volume $PWD:/app composer require PACKAGE_NAME
+```
+or for windows
+```
+$ docker container run -it --volume %PWD%:/app composer require PACKAGE_NAME
 ```
 
 ## Call yii console app
@@ -22,6 +27,11 @@ $ docker exec CONTAINER_ID php yii
 CONTAINER_ID you can find for container with php-fpm:
 ```
 docker container ls
+```
+## run parsing
+```
+$ docker exec -it CONTAINER_ID bash
+$ ./yii parse/parse
 ```
 
 Yii 2 Basic Project Template

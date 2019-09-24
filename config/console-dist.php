@@ -18,6 +18,9 @@ $config = [
         */
     ],
     'params' => $params,
+    'controllerMap' => [
+        'parse' => 'app\commands\ParseController'
+    ],
 ];
 
 return $config;
