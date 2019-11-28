@@ -7,6 +7,7 @@
 
 namespace app\commands;
 
+use app\components\PhpWebdriver;
 use Yii;
 use app\models\CurlWrapper;
 use app\models\PhpQueryWrapper;
@@ -268,5 +269,11 @@ class ParseController extends Controller
           ->setFrom(['spekersoft@yandex.ru' => 'price_checker'])
           ->setSubject($subject)
           ->send();
+    }
+
+    public function actionTest()
+    {
+        $webdriver = new PhpWebdriver();
+        $webdriver->run();
     }
 }

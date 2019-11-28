@@ -19,7 +19,8 @@
         "yiisoft/yii2": "~2.0.13",
         "yiisoft/yii2-bootstrap": "~2.0.7",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "electrolinux/phpquery": "^0.9.6"
+        "electrolinux/phpquery": "^0.9.6",
+        "facebook/webdriver": "^1.7"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
