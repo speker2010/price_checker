@@ -4,14 +4,22 @@ $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'price_checker',
     'basePath' => dirname(__DIR__),
+    'language' => 'ru-RU',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => \yii\i18n\PhpMessageSource::class
+                ]
+            ]
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '8HGYfT-tDjUKwye31rYJUReCoySQVLjt',
@@ -43,14 +51,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
