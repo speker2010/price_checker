@@ -241,7 +241,7 @@ class ParseController extends Controller
                 $result['http_code'] = $httpData['http_code'];
                 $prices = new Prices();
                 $prices->attributes = $result;
-                $prices->save(false);
+                $prices->save();
                 $prices->link('product', $product);
                 $prices->link('store', $items->store);
                 $result['store_name'] = $items->store->name;

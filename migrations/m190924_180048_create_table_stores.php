@@ -25,7 +25,7 @@ class m190924_180048_create_table_stores extends Migration
             'city_selector' => $this->char(255),
             'cookies' => $this->char(255)
         ],
-        'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
+        'CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE=InnoDB');
     }
 
     /**

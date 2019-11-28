@@ -18,7 +18,7 @@ class m190924_175837_create_table_products extends Migration
             'name' => $this->char(255),
             'active' => $this->boolean()
         ],
-        'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB');
+        'CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ENGINE=InnoDB');
     }
 
     /**
