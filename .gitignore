@@ -1,5 +1,6 @@
 # phpstorm project files
 .idea
+docker/nginx/default.conf
 
 # netbeans project files
 nbproject
