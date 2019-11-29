@@ -59,7 +59,7 @@ docker container ls
 ```
 ## run parsing
 ```
-$ docker exec -it CONTAINER_ID bash
+$ docker exec -itw /app CONTAINER_ID bash
 $ ./yii parse/parse
 ```
 
