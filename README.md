@@ -3,11 +3,21 @@ It's application for parsing prices from sites. You can add product, stores and 
 Product is simple. 'Product name' and 'active' it or not.
 Store contain 'name', 'cookies', 'https', 'host' and css selectors for 'price', 'old price', 'sale' and 'city'.
 
+You have 2 options:
+'Setup and run' and 'docker run'.
+First option: install environment manualy.
+Second: docker environment.
+
+Create config files:
+```bash
+cp console-dist.php console.php 
+cp db-dist.php db.php #db config
+```
+
 ## setup and run
 ```bash
 composer install #for install dependecies
-cp console-dist.php console.php 
-cp db-dist.php db.php #db config
+
 php yii migrate #for create tables 
 ```
 
