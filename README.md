@@ -4,8 +4,11 @@ Product is simple. 'Product name' and 'active' it or not.
 Store contain 'name', 'cookies', 'https', 'host' and css selectors for 'price', 'old price', 'sale' and 'city'.
 
 You have 2 options:
+
 'Setup and run' and 'docker run'.
+
 First option: install environment manualy.
+
 Second: docker environment.
 
 Create config files:
