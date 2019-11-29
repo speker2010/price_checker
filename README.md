@@ -11,7 +11,7 @@ First option: install environment manualy.
 
 Second: docker environment.
 
-Create config files:
+## Create config files:
 ```bash
 cp console-dist.php console.php 
 cp db-dist.php db.php #db config
