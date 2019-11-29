@@ -32,7 +32,7 @@ php yii migrate #for create tables
 docker-compose up
 ```
 1. Wait while creating autoload.php in ```vendor``` dir in composer container.
-1. Migrate up `docker exec -itw /app CONTAINER_ID bash`, then `./yii migrate`. Type `yes`
+1. Migrate up `docker exec -itw /var/www/html CONTAINER_ID bash`, then `./yii migrate`. Type `yes`
 1. Go to localhost:8000 or DOCKER_MACHINE_IP:8000
 
 Where DOCKER_MACHINE_IP from results for:
@@ -59,7 +59,7 @@ docker container ls
 ```
 ## run parsing
 ```
-$ docker exec -itw /app CONTAINER_ID bash
+$ docker exec -itw /var/www/html CONTAINER_ID bash
 $ ./yii parse/parse
 ```
 
