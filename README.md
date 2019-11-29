@@ -13,7 +13,7 @@ Second: docker environment.
 
 ## Create config files:
 ```bash
-cp console-dist.php console.php 
+cp console-dist.php console.php #email config
 cp db-dist.php db.php #db config
 ```
 

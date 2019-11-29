@@ -16,6 +16,8 @@ use app\models\ProductStore;
 use yii\console\Controller;
 use app\models\Stores;
 use app\models\Products;
+use yii\helpers\ArrayHelper;
+
 /**
  * This command echoes the first argument that you have entered.
  *
@@ -256,7 +258,11 @@ class ParseController extends Controller
             }
         }
 
-        $email = 'speker@mail.ru';
+        $email = ArrayHelper::getValue(Yii::$app->params, 'reports-email');
+        $emailFrom = ArrayHelper::getValue(Yii::$app->params, 'from-email');
+        if ($email === null || $emailFrom == null) {
+            return;
+        }
         $subject = 'Спарсились товары';
         Yii::$app->mailer->compose(
             'report',
@@ -266,7 +272,7 @@ class ParseController extends Controller
             ]
         )
           ->setTo($email)
-          ->setFrom(['spekersoft@yandex.ru' => 'price_checker'])
+          ->setFrom([$emailFrom => 'price_checker'])
           ->setSubject($subject)
           ->send();
     }

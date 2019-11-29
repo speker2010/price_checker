@@ -8,16 +8,19 @@ $config = [
     'basePath' => dirname(__DIR__),
     'components' => [
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+        'mailer' => [ //https://www.yiiframework.com/extension/yiisoft/yii2-swiftmailer/doc/api/2.1/yii-swiftmailer-mailer
+            'class' => 'Swift_SmtpTransport',
+            'host' => 'localhost',
+            'username' => 'username',
+            'password' => 'password',
+            'port' => '587',
+            'encryption' => 'tls',
+        ]
     ],
-    'params' => $params,
+    'params' => array_merge($params, [
+        'reports-email' => 'my@domain.ru', // Reports will send to my@domain.ru email
+        'from-email' => 'my@domain.ru' // Reports will send from my@domain.ru email
+    ]),
     'controllerMap' => [
         'parse' => 'app\commands\ParseController'
     ],
