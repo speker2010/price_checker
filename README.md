@@ -3,8 +3,18 @@ It's application for parsing prices from sites. You can add product, stores and 
 Product is simple. Product name and active it or not.
 Store contain name, cookies, url, host and css selectors for price, old price, sale and city.
 
+## setup and run
+```bash
+composer install #for install dependecies
+cp console-dist.php console.php 
+cp db-dist.php db.php #db config
+php yii migrate #for create tables 
+```
 
-## run
+`web/` is public dir. `docker/nginx/default.template.conf` is nginx config. 
+
+
+## docker run
 ```bash
 docker-compose up
 ```
