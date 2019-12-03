@@ -1,23 +1,19 @@
-# Price checker
-It's application for parsing prices from sites. You can add product, stores and add url product in store.
-Product is simple. 'Product name' and 'active' it or not.
-Store contain 'name', 'cookies', 'https', 'host' and css selectors for 'price', 'old price', 'sale' and 'city'.
+# Price Checker
+Application for parsing prices from web-sites. You can add products, stores and products' URLs in stores.
+Product consists of 'Product name' and 'active' parameters (String and Boolean).
+Store contains 'name', 'cookies', 'https', 'host' and CSS selectors for 'price', 'old price', 'sale' and 'city' parameters.
 
-You have 2 options:
+## Usage
 
-'Setup and run' and 'docker run'.
+### 1. Create config files:
 
-First option: install environment manualy.
-
-Second: docker environment.
-
-## Create config files:
 ```bash
 cp console-dist.php console.php #email config
 cp db-dist.php db.php #db config
 ```
 
-## setup and run
+### 2. Setup and run using host system
+
 ```bash
 composer install #for install dependecies
 
@@ -27,38 +23,47 @@ php yii migrate #for create tables
 `web/` is public dir. `docker/nginx/default.template.conf` is nginx config. 
 
 
-## docker run
+### 2. Or use Docker container
+
 ```bash
 docker-compose up
 ```
-1. Wait while creating autoload.php in ```vendor``` dir in composer container.
-1. Migrate up `docker exec -itw /var/www/html CONTAINER_ID bash`, then `./yii migrate`. Type `yes`
-1. Go to localhost:8000 or DOCKER_MACHINE_IP:8000
 
-Where DOCKER_MACHINE_IP from results for:
-```
+1. Wait until `autoload.php` in `vendor` container's directory will be created.
+1. Migrate: `docker exec -itw /var/www/html CONTAINER_ID bash`, `./yii migrate`, `yes`.
+1. Go to `localhost:8000` or `DOCKER_MACHINE_IP:8000`
+
+To find out DOCKER_MACHINE_IP use:
+```bash
 docker-machine ip
 ```
 
-## Add dependencies
-```
-$ docker container run -it --volume $PWD:/app composer require PACKAGE_NAME
-```
-or for windows
-```
-$ docker container run -it --volume %PWD%:/app composer require PACKAGE_NAME
+#### Add dependencies
+
+Unix:
+```bash
+docker container run -it --volume $PWD:/app composer require PACKAGE_NAME
 ```
 
-## Call yii console app
+Windows:
+```bash
+docker container run -it --volume %PWD%:/app composer require PACKAGE_NAME
 ```
-$ docker exec CONTAINER_ID php yii
+
+#### Call yii console app
+
+```bash
+docker exec CONTAINER_ID php yii
 ```
-CONTAINER_ID you can find for container with php-fpm:
+
+CONTAINER_ID could be find using the following command:
+```bash
+docker ps -aqf "name=php-fpm"
 ```
-docker container ls
-```
-## run parsing
-```
-$ docker exec -itw /var/www/html CONTAINER_ID bash
-$ ./yii parse/parse
+
+### 3. Run parsing
+
+```bash
+docker exec -itw /var/www/html CONTAINER_ID bash
+./yii parse/parse
 ```
