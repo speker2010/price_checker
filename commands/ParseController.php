@@ -7,7 +7,9 @@
 
 namespace app\commands;
 
+use app\components\ParserBase;
 use app\components\SeleniumParser;
+use app\models\ProductPage;
 use Yii;
 use app\models\CurlWrapper;
 use app\models\PhpQueryWrapper;
@@ -39,6 +41,12 @@ class ParseController extends Controller
             var_dump($product->name);
             $productStore = $product->productStores;
             foreach ($productStore as $items) {
+                $page = Yii::$container->get(ProductPage::class, [
+                    'product' => $product
+                ]);
+                $parser = Yii::$container->get(ParserBase::class, [
+                    'page' => $page
+                ]);
                 echo "--------------------step------------\n";
                 echo $items->store->name;
                 $curl = new CurlWrapper();

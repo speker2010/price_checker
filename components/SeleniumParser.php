@@ -1,13 +1,14 @@
 <?php
 namespace app\components;
 
+use app\commands\ParseController;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use yii\base\Component;
 
-class PhpWebdriver extends Component
+class SeleniumParser extends Component implements ParserInterface
 {
     public function run()
     {
